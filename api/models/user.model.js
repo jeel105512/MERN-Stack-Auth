@@ -1,21 +1,20 @@
-import { timeStamp } from "console";
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
     name: {
-      type: [String, "You must provide a user name"],
-      required: true,
+      type: String,
+      required: [true, "You must provide a user name"],
       unique: true,
     },
     email: {
-      type: [String, "You must provide a user email"],
-      required: true,
+      type: String,
+      required: [true, "You must provide a user email"],
       unique: true,
     },
     password: {
-      type: [String, "You must provide a user password"],
-      required: true,
+      type: String,
+      required: [true, "You must provide a user password"],
     },
   },
   { timestamps: true }
